@@ -3,8 +3,8 @@ from docx.shared import Pt
 from docx.document import Document as DocumentObject
 
 FONT_SIZE = 15
-FONT_NAME = "Times New Roman"
-# FONT_NAME = "Preeti"
+# FONT_NAME = "Times New Roman"
+FONT_NAME = "Preeti"
 
 
 def create_doc():

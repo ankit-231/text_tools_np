@@ -32,8 +32,15 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-#### Run the script
+### Usage
+
+- In `main.py`, replace the `input_file_path` and `output_file_path` with the paths to your input and output files.
+- Ideally, create a `files` directory in the same directory as `main.py`.
+    - `mkdir files`
+- Then put the input file inside the `files` directory.
+- Set `output_file_path` to something inside `files` directory. (Eg. `output.docx`)
+- Run the script
 
 ```bash
-python main.py
+python -m main
 ```

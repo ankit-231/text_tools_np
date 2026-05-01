@@ -44,3 +44,8 @@ pip install -r requirements.txt
 ```bash
 python -m main
 ```
+
+### To do
+
+- [x] Convert all content to preeti
+- [ ] Convert only devanagari to preeti, leave english text as it is

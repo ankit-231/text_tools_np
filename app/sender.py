@@ -48,13 +48,18 @@ def send_page(content: str) -> str:
     session = get_session()
     result_parts = []
 
+    total_requests_made = 0
+
     for chunk, is_nepali in segment_text(content):
         if is_nepali:
+            # print(chunk)
             converted = _convert_nepali_chunk(chunk, session)
+            total_requests_made += 1
             result_parts.append(converted)
         else:
             result_parts.append(chunk)  # pass through unchanged
 
+    # print("Total requests made:", total_requests_made)
     return "".join(result_parts)
 
 

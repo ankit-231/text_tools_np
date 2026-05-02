@@ -2,25 +2,15 @@
 To send a text via an endpoint and return the response
 """
 
+import re
+
 from bs4 import BeautifulSoup
 from requests import Session
 
 from app.segmenter import segment_text
+from app.session import get_session
 
 UNICODE_TO_PREETI_CONVERTER_URL = "https://unicode.shresthasushil.com.np/"
-
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-    "Accept": "text/html,application/json",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Connection": "keep-alive",
-}
-
-
-def get_session():
-    session = Session()
-    session.headers.update(HEADERS)
-    return session
 
 
 def _convert_nepali_chunk(content: str, session: Session) -> str:
@@ -59,7 +49,7 @@ def send_page(content: str) -> str:
         else:
             result_parts.append(chunk)  # pass through unchanged
 
-    # print("Total requests made:", total_requests_made)
+    print("Total requests made:", total_requests_made)
     return "".join(result_parts)
 
 
@@ -68,6 +58,5 @@ if __name__ == "__main__":
     # converted = send_page(content=content)
     # print(converted)
     sample = "Invoice No: 123  थिति स्थिति  Amount: Rs. १२१४  राम शाहको थितिहरु।"
-    print(send_page(sample))
-
+    # print(send_page(sample))
     pass

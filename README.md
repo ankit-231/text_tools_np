@@ -34,6 +34,22 @@ pip install -r requirements.txt
 
 ### Usage
 
+#### In one go
+
+- This only sends 1 request per page, so this is preferable.
+- In `main_in_one_go.py`, replace the `input_file_path` and `output_file_path` with the paths to your input and output files.
+- Ideally, create a `files` directory in the same directory as `main_in_one_go.py`.
+    - `mkdir files`
+- Then put the input file inside the `files` directory.
+- Set `output_file_path` to something inside `files` directory. (Eg. `output.docx`)
+- Run the script
+
+```bash
+python -m main_in_one_go
+```
+
+#### Deprecated
+
 - In `main.py`, replace the `input_file_path` and `output_file_path` with the paths to your input and output files.
 - Ideally, create a `files` directory in the same directory as `main.py`.
     - `mkdir files`

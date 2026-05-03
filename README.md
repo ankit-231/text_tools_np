@@ -64,4 +64,7 @@ python -m main
 ### To do
 
 - [x] Convert all content to preeti
-- [ ] Convert only devanagari to preeti, leave english text as it is
+- [x] Convert only devanagari to preeti, leave english text as it is
+- [x] Convert pages in one go instead of chunks to reduce requests
+- [ ] Fix the bug of khutta kaatiyeko letters being interpreted as aadhi letters. Eg: `गर्छन्` becomes `गर्छ` + aadhi `न` like the aadhi `न` of `धन्य`. It is probably because of how I'm building payload via `_build_payload` function in `sender_in_one_go.py`. `गर्छन्` becomes `गर्छन्###N###` which the online converter interprets as the khutta kateko `न` to be aadhi `न` which is a rule of nepali grammar.
+- [ ] All the spaces, commas, punctuations (like hyphens except purnabiram) are currently in Times New Roman which isn't desirable. `segment_text` function in `segmenter.py` needs to be fixed to handle this.
